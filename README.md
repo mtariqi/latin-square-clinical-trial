@@ -2,8 +2,7 @@
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Maintained](https://img.shields.io/badge/maintained-yes-brightgreen.svg)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
-```
-----------------------------------------------------------------------------
+
 ### 📝Project Description
 A comprehensive Python toolkit for designing, simulating, and analyzing 
 crossover clinical trials using Latin Square experimental designs. 
