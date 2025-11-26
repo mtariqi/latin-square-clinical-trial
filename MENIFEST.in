@@ -1,0 +1,38 @@
+# Include documentation
+include README.md
+include LICENSE
+include CONTRIBUTING.md
+include CITATION.cff
+include QUICKSTART.md
+include DATA_SOURCES.md
+include .zenodo.json
+
+# Include requirements
+include requirements.txt
+include requirements-dev.txt
+
+# Include examples
+recursive-include examples *.py
+recursive-include examples *.md
+
+# Include documentation
+recursive-include docs *.md
+recursive-include docs *.rst
+
+# Include notebooks
+recursive-include notebooks *.ipynb
+
+# Include test data
+recursive-include data *.csv
+recursive-include data *.txt
+
+# Include figures
+recursive-include figures *.png
+recursive-include figures *.jpg
+
+# Exclude unnecessary files
+global-exclude __pycache__
+global-exclude *.py[co]
+global-exclude .DS_Store
+global-exclude *.swp
+global-exclude *.swo
