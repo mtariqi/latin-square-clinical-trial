@@ -1,0 +1,47 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "Latin Square Clinical Trial Analyzer"
+abstract: "A comprehensive Python toolkit for designing, simulating, and analyzing crossover clinical trials using Latin Square experimental designs in health science research."
+authors:
+  - family-names: "Your Last Name"
+    given-names: "Your First Name"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+    email: "your.email@example.com"
+    affiliation: "Your Institution"
+repository-code: "https://github.com/yourusername/latin-square-clinical-trial"
+url: "https://github.com/yourusername/latin-square-clinical-trial"
+keywords:
+  - latin-square
+  - clinical-trials
+  - crossover-design
+  - biostatistics
+  - experimental-design
+  - health-science
+  - statistical-analysis
+  - python
+license: MIT
+version: 1.0.0
+date-released: "2024-11-25"
+doi: 10.5281/zenodo.XXXXXXX
+references:
+  - type: book
+    authors:
+      - family-names: "Jones"
+        given-names: "B."
+      - family-names: "Kenward"
+        given-names: "M. G."
+    title: "Design and Analysis of Cross-Over Trials"
+    year: 2014
+    publisher:
+      name: "Chapman and Hall/CRC"
+    edition: "3rd"
+  - type: book
+    authors:
+      - family-names: "Senn"
+        given-names: "S."
+    title: "Cross-over Trials in Clinical Research"
+    year: 2002
+    publisher:
+      name: "John Wiley & Sons"
+    edition: "2nd"
