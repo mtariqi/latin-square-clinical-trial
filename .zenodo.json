@@ -1,0 +1,61 @@
+{
+  "title": "Latin Square Clinical Trial Analyzer",
+  "description": "A comprehensive Python toolkit for designing, simulating, and analyzing crossover clinical trials using Latin Square experimental designs. Provides tools for generating balanced designs, simulating realistic trial data, performing statistical analysis (ANOVA, paired t-tests), and creating publication-ready visualizations for health science research.",
+  "creators": [
+    {
+      "name": "Your Full Name",
+      "affiliation": "Your Institution",
+      "orcid": "0000-0000-0000-0000"
+    }
+  ],
+  "contributors": [],
+  "keywords": [
+    "latin-square",
+    "clinical-trials",
+    "crossover-design",
+    "biostatistics",
+    "experimental-design",
+    "health-science",
+    "statistical-analysis",
+    "anova",
+    "python",
+    "data-analysis",
+    "medical-research",
+    "pharmaceutical-trials"
+  ],
+  "license": "MIT",
+  "upload_type": "software",
+  "access_right": "open",
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/yourusername/latin-square-clinical-trial",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "subjects": [
+    {
+      "term": "Biostatistics",
+      "identifier": "http://id.loc.gov/authorities/subjects/sh85014203",
+      "scheme": "url"
+    },
+    {
+      "term": "Clinical Trials",
+      "identifier": "http://id.loc.gov/authorities/subjects/sh85027118",
+      "scheme": "url"
+    },
+    {
+      "term": "Experimental Design",
+      "identifier": "http://id.loc.gov/authorities/subjects/sh85046433",
+      "scheme": "url"
+    }
+  ],
+  "communities": [
+    {
+      "identifier": "zenodo"
+    }
+  ],
+  "grants": [],
+  "version": "1.0.0"
+}
