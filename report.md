@@ -4,10 +4,8 @@
 
 ---
 
-**Author:** [Your Name]  
-**Student ID:** [Your ID]  
-**Course:** [Course Code - Course Name]  
-**Institution:** [Your University]  
+**Author:** Md Tariqul Islam  
+**Institution:** SCIRED 
 **Date:** November 28, 2024  
 **Word Count:** ~6,500 words
 
