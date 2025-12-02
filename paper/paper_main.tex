@@ -1,0 +1,99 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{natbib}
+
+\title{COMALLS: Context-Controlled Machine Learning with Latin Square Experimental Designs}
+\author{Md Tariqul Islam\\
+  \small SCIREd, Toronto, Canada\\
+  \small \texttt{tariqul@scired.com}}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Modern machine learning still relies on stochastic mini-batches,
+which entangle model behavior with uncontrolled contextual factors such as
+domain shift, noise level, or client heterogeneity.
+We introduce COMALLS, a cognitive machine learning framework that replaces
+ad hoc random batching with a structured training schedule based on Latin
+square experimental designs. COMALLS is implemented as an open-source Python
+library that also unifies a Latin Square clinical trial simulator for
+health science applications.
+\end{abstract}
+
+\section{Introduction}
+Deep learning models are typically trained with randomly sampled mini-batches.
+While effective for optimization, such sampling makes it difficult to
+separate genuine model improvements from artifacts of contextual variability.
+We argue that training can be viewed as a designed experiment and propose
+COMALLS, which applies Latin square designs to machine learning.
+
+\section{Background}
+\subsection{Latin Square Designs}
+Brief recap of Latin squares, blocking on two nuisance factors, and
+applications in clinical trials and psychology.
+
+\subsection{Related Work}
+Summarize prior work on robust training, curriculum learning, and
+federated evaluation.
+
+\section{Methods}
+\subsection{Latin-Square Scheduling}
+Let $M = \{m_1,\dots,m_k\}$ be a set of models and
+$C_1, C_2$ be two context factors (e.g., domains and noise regimes).
+COMALLS constructs a $k \times k$ Latin square $L$ such that each model index
+appears exactly once in each row and column. Cell $(i,j)$ defines an episode
+$(m_{L_{ij}}, c_{1,i}, c_{2,j})$.
+
+\subsection{Episode Execution}
+Each episode consists of model instantiation, data selection under the
+specified context pair, training for a fixed number of steps, and evaluation.
+Performance metrics are logged for subsequent statistical analysis.
+
+\subsection{Statistical Aggregation}
+Because each model is observed exactly once in each context combination,
+COMALLS supports ANOVA and mixed-effects models to quantify main effects
+and interactions between models and contexts.
+
+\section{Implementation}
+The COMALLS scheduler and clinical trial toolkit are implemented in Python
+and released as open-source software.\footnote{Available at
+\url{https://github.com/mtariqi/latin-square-clinical-trial}.}
+The package exposes:
+
+\begin{itemize}
+  \item \texttt{LatinSquareScheduler} for machine learning experiments;
+  \item \texttt{LatinSquareDesign} for crossover clinical trials.
+\end{itemize}
+
+\section{Experiments}
+Describe:
+\begin{itemize}
+  \item synthetic robustness experiments with multiple domains and noise;
+  \item application to federated-style client splits;
+  \item clinical trial simulation and validation.
+\end{itemize}
+
+\section{Results}
+Summarize accuracy, robustness metrics, and statistical tests (e.g., ANOVA
+tables, confidence intervals).
+
+\section{Discussion}
+Interpret how structured scheduling changes conclusions about which models
+``win'' and how they generalize across contexts.
+
+\section{Conclusion}
+COMALLS treats learning as a designed experiment rather than a random
+sequence of batches. Future work includes multi-way designs and integration
+with federated learning frameworks.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
