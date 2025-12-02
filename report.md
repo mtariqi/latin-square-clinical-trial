@@ -1,4 +1,5 @@
-COMALLS: A Latin Square–Driven Framework for Confounding-Controlled Machine Learning and Clinical Trial Automation
+# COMALLS: A Latin Square–Driven Framework for Confounding-Controlled Machine Learning and Clinical Trial Automation
+
 Author: Md Tariqul Islam
 Institution: SCIRED
 Date: December 2025
@@ -126,7 +127,8 @@ The framework optionally integrates PHI-safe pipelines, SHA-256 hashing for reco
 Figure 1
 
 ```
-<img width="2000" height="1200" alt="image" src="https://github.com/user-attachments/assets/97a3127a-2e0e-4cc5-a884-3682ff9b31f5" />
+<img width="2000" height="1200" alt="image" src="https://github.com/user-attachments/assets/204282ba-597a-41e3-89d6-bc5a86ebff5f" />
+
 ```
 
 
