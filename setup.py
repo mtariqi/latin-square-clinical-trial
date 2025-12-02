@@ -1,36 +1,48 @@
 """
-Setup script for Latin Square Clinical Trial Analyzer.
+Setup script for COMALLS + Latin Square Clinical Trial Toolkit
 """
 
 from setuptools import setup, find_packages
 import pathlib
 
-# Read the contents of README file
-HERE = pathlib.Path(__file__).parent
-README = (HERE / "README.md").read_text()
+# Read README for PyPI description
+ROOT = pathlib.Path(__file__).parent
+README = (ROOT / "README.md").read_text(encoding="utf-8")
 
 setup(
-    name="latin-square-analyzer",
+    name="comalls-latin-square",
     version="1.0.0",
-    author="Your Name",
-    author_email="your.email@example.com",
-    description="A toolkit for designing and analyzing Latin Square crossover clinical trials",
+    author="Md Tariqul Islam",
+    author_email="tariqul@scired.com",
+    description=(
+        "Unified toolkit for Latin Square clinical trial simulation and "
+        "COMALLS context-controlled machine learning using Latin Square scheduling."
+    ),
     long_description=README,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/latin-square-clinical-trial",
+
+    url="https://github.com/mtariqi/latin-square-clinical-trial",
     project_urls={
-        "Bug Tracker": "https://github.com/yourusername/latin-square-clinical-trial/issues",
-        "Documentation": "https://github.com/yourusername/latin-square-clinical-trial/blob/main/README.md",
-        "Source Code": "https://github.com/yourusername/latin-square-clinical-trial",
+        "Bug Tracker": "https://github.com/mtariqi/latin-square-clinical-trial/issues",
+        "Documentation": "https://mtariqi.github.io/latin-square-clinical-trial/",
+        "Source Code": "https://github.com/mtariqi/latin-square-clinical-trial",
+        "Sphinx Docs": "https://mtariqi.github.io/latin-square-clinical-trial/",
+        "COMALLS Paper": "https://github.com/mtariqi/latin-square-clinical-trial/tree/main/paper",
     },
-    packages=find_packages(),
+
+    packages=find_packages(exclude=("tests*", "paper*", "docs*", "examples*")),
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Science/Research",
         "Intended Audience :: Healthcare Industry",
+        "Intended Audience :: Developers",
+        "Topic :: Scientific/Engineering :: Artificial Intelligence",
         "Topic :: Scientific/Engineering :: Medical Science Apps.",
         "Topic :: Scientific/Engineering :: Bio-Informatics",
+        "Topic :: Scientific/Engineering :: Information Analysis",
         "License :: OSI Approved :: MIT License",
+
+        # Python versions
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
@@ -39,7 +51,9 @@ setup(
         "Programming Language :: Python :: 3.11",
         "Operating System :: OS Independent",
     ],
+
     python_requires=">=3.7",
+
     install_requires=[
         "numpy>=1.19.0",
         "pandas>=1.1.0",
@@ -47,26 +61,7 @@ setup(
         "seaborn>=0.11.0",
         "scipy>=1.5.0",
     ],
+
     extras_require={
         "dev": [
             "pytest>=6.0",
-            "pytest-cov>=2.0",
-            "black>=21.0",
-            "flake8>=3.9",
-            "pylint>=2.8",
-            "jupyter>=1.0",
-            "notebook>=6.4",
-        ],
-    },
-    keywords=[
-        "latin-square",
-        "clinical-trials",
-        "crossover-design",
-        "biostatistics",
-        "experimental-design",
-        "anova",
-        "health-science",
-    ],
-    include_package_data=True,
-    zip_safe=False,
-)
