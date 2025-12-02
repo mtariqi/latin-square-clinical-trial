@@ -233,20 +233,14 @@ trial.generate_report("trial_report.txt")
 ---
 
 # 🧩 Diagrams
-
-## COMALLS Workflow
-
-```mermaid
+```
 flowchart TD
     A[Define Models] --> C[Latin Square Scheduler]
     B[Define Context Factors] --> C
     C --> D[Generate Episodes]
     D --> E[Run ML Training/Eval]
-    E --> F[Statistical Aggregation (ANOVA / Mixed Models)]
-    F --> G[Meta-Learning Updates]
+    E["Statistical Aggregation (ANOVA / Mixed Models)"] --> F["Meta-Learning Updates"]
 ```
-
----
 
 # 📈 Statistical Methods
 
