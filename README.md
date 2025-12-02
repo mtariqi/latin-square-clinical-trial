@@ -1,362 +1,302 @@
+# COMALLS + Latin Square Clinical Trial Toolkit
+
+**Unified Framework for Clinical-Trial Simulation and Context-Controlled Machine Learning**
+Author: **Md Tariqul Islam (TARIQ)**
+
 ![Python](https://img.shields.io/badge/python-3.7+-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Maintained](https://img.shields.io/badge/maintained-yes-brightgreen.svg)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+![Status](https://img.shields.io/badge/status-active-success)
 
-### 📝Project Description
-A comprehensive Python toolkit for designing, simulating, and analyzing 
-crossover clinical trials using Latin Square experimental designs. 
-Includes data simulation, statistical analysis (ANOVA, pairwise tests), 
-and publication-ready visualizations for health science research.
+---
 
-### 💡 Topics 
-- `clinical-trials`
-- `latin-square`
-- `biostatistics`
-- `crossover-design`
-- `health-science`
-- `python`
-- `data-analysis`
-- `experimental-design`
-- `statistics`
+## 📌 Overview
 
-## Project Overview
+This repository unifies **two major scientific toolkits** built on Latin Square experimental design:
 
-This project demonstrates Latin Square design analysis for crossover clinical trials:
+### **1) Clinical-Trial Latin Square Analyzer**
 
-- **Theoretical Implementation**: Complete simulator with customizable parameters
-- **Applied Analysis**: Tools for analyzing real clinical trial data
-- **Educational Resources**: Comprehensive methodology documentation
+A comprehensive Python toolkit for designing, simulating, and analyzing
+**crossover clinical trials** using Latin Square designs.
 
-### Two Ways to Use This Project:
+### **2) COMALLS Scheduler Library**
 
-1. **Learning & Simulation** (`latin_square_analyzer.py`):
-   - Generate custom crossover trial data
-   - Test different scenarios
-   - Understand methodology
+A model-agnostic machine learning framework that uses
+**Latin Square–based structured experimentation**
+to replace random batching with **context-controlled learning episodes**.
 
-2. **Real Data Analysis** (`analyze_real_clinical_data.py`):
-   - Analyze actual clinical trial data
-   - Verify Latin Square structure
-   - Publication-ready outputs
+Both systems rely on the same statistical foundation and are now integrated into one coherent research package.
 
-## **Project Structure:**
+---
+
+# 🎯 Why This Repository Is Unique
+
+This project goes beyond classical experimental design. It demonstrates:
+
+* ✔ **Latin squares in medical research** (crossover trials)
+* ✔ **Latin squares in machine learning** (context-balanced training)
+* ✔ Unified statistical rigor across two disciplines
+* ✔ Reproducible design-based experimentation
+* ✔ Model-agnostic APIs for ML, simulation, and statistical analysis
+
+---
+
+# 📝 Table of Contents
+
+* [Overview](#overview)
+* [COMALLS: ML Scheduler](#comalls-ml-scheduler)
+* [Clinical-Trial Toolkit](#clinical-trial-toolkit)
+* [Installation](#installation)
+* [Project Structure](#project-structure)
+* [Usage Examples](#usage-examples)
+
+  * COMALLS Scheduler (ML)
+  * Clinical-Trial Analyzer (Health Science)
+* [Diagrams](#diagrams)
+* [Statistical Methods](#statistical-methods)
+* [Contributing](#contributing)
+* [License](#license)
+
+---
+
+# 🚀 COMALLS: ML Scheduler
+
+### *Context-Controlled ML Training Using Latin Squares*
+
+Modern ML uses stochastic mini-batches, which often confound model improvements with uncontrolled factors (domain shift, noise level, client distribution).
+**COMALLS** replaces this randomness with a **designed experiment**:
+
+### ✔ Latin-square–based episode scheduling
+
+✔ Each model appears exactly once per context pairing
+✔ Enables ANOVA/mixed-model analysis
+✔ Model-agnostic, plug-in compatible with PyTorch, TensorFlow, etc.
+✔ Perfect for robustness, noise studies, and federated learning research
+
+---
+
+## 🔧 COMALLS API Example
+
+```python
+from comalls import LatinSquareScheduler
+
+scheduler = LatinSquareScheduler(
+    models=["ModelA", "ModelB", "ModelC"],
+    context1=["LowShift", "MediumShift", "HighShift"],
+    context2=["LowNoise", "MidNoise", "HighNoise"],
+    seed=42
+)
+
+for ep in scheduler:
+    print(ep.episode_id, ep.model, ep.context1, ep.context2)
+```
+
+### Output
+
+```
+Episode 0: ModelA under LowShift & LowNoise
+Episode 1: ModelB under LowShift & MidNoise
+Episode 2: ModelC under LowShift & HighNoise
+...
+```
+
+---
+
+# 🏥 Clinical-Trial Toolkit
+
+### *Latin Square Designs for Health Science Research*
+
+A full-featured toolkit for:
+
+* Simulating crossover clinical trial data
+* Running ANOVA & paired comparisons
+* Visualizing study designs
+* Generating publication-ready medical research figures
+* Producing full text statistical reports
+
+---
+
+## 🔬 What is a Latin Square Design?
+
+A *k × k* layout where each treatment appears:
+
+* exactly **once per subject row**
+* exactly **once per time-period column**
+
+This controls for two independent sources of variation:
+
+* Subject differences
+* Period / time effects
+
+---
+
+## 🧪 Clinical Trial Example
+
+```python
+from latin_square_analyzer import LatinSquareDesign
+
+treatments = ['Placebo', 'Drug_A', 'Drug_B', 'Drug_C']
+trial = LatinSquareDesign(treatments)
+
+design = trial.generate_design(randomize=True)
+data = trial.simulate_trial_data({"Placebo":0, "Drug_A":15, "Drug_B":25, "Drug_C":10})
+results = trial.analyze_results()
+
+trial.visualize_design()
+trial.visualize_results()
+trial.generate_report("trial_report.txt")
+```
+
+---
+
+# 🧬 Unified Project Structure
+
 ```
 latin-square-clinical-trial/
 │
-├── README.md
-├── QUICKSTART.md
-├── DATA_SOURCES.md                  
+├── README.md                     ← (this file)
 │
-├── latin_square_analyzer.py         📊 Simulated data (educational)
-├── analyze_real_clinical_data.py    🔬 Real data (applied) 
+├── comalls/                      ← ML scheduler library
+│   ├── __init__.py
+│   ├── latin_square.py
+│   ├── scheduler.py
+│   └── episode_runner.py
+│
+├── latin_square_analyzer.py      ← Clinical trial simulator
+├── analyze_real_clinical_data.py
 │
 ├── examples/
-│   ├── example_pain_study.py        (simulated)
-│   └── example_real_data.ipynb      (real data notebook) 
+│   ├── demo_scheduler.ipynb
+│   └── example_real_data.ipynb
 │
 ├── data/
-│   ├── sample_simulated.csv         (generated data)
-│   └── sample_real.csv              (real or realistic data) 
+│   ├── sample_simulated.csv
+│   └── sample_real.csv
 │
 └── docs/
     ├── methodology.md
-    └── data_sources.md              
-    ```
-    
-# Latin Square Clinical Trial Analyzer
-
-A comprehensive Python toolkit for designing, simulating, and analyzing crossover clinical trials using Latin Square experimental designs in health science research.
-
-![Python Version](https://img.shields.io/badge/python-3.7%2B-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
-![Status](https://img.shields.io/badge/status-active-success)
-
-## 📋 Table of Contents
-
-- [Overview](#overview)
-- [What is a Latin Square Design?](#what-is-a-latin-square-design)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Example Use Cases](#example-use-cases)
-- [Output Files](#output-files)
-- [Statistical Methods](#statistical-methods)
-- [Contributing](#contributing)
-- [License](#license)
-
-## 🔬 Overview
-
-This project provides a complete framework for conducting crossover clinical trials using Latin Square designs. It's particularly useful for comparing multiple treatments (e.g., medications, therapies, interventions) while controlling for:
-
-- **Individual differences** between subjects
-- **Time/period effects** (learning, fatigue, disease progression)
-- **Carryover effects** from previous treatments
-
-## 🎯 What is a Latin Square Design?
-
-A Latin Square is an experimental design where:
-- Each treatment appears exactly **once** in each row (subject)
-- Each treatment appears exactly **once** in each column (time period)
-- This ensures balanced comparison while controlling for two sources of variation
-
-**Example 4×4 Latin Square:**
-
-| Subject | Period 1 | Period 2 | Period 3 | Period 4 |
-|---------|----------|----------|----------|----------|
-| Patient 1 | Drug A | Drug B | Drug C | Placebo |
-| Patient 2 | Drug B | Drug C | Placebo | Drug A |
-| Patient 3 | Drug C | Placebo | Drug A | Drug B |
-| Patient 4 | Placebo | Drug A | Drug B | Drug C |
-
-## ✨ Features
-
-- ✅ **Automated Design Generation**: Create balanced Latin Square designs with optional randomization
-- ✅ **Data Simulation**: Generate realistic trial data with configurable parameters:
-  - Treatment effects
-  - Baseline variability
-  - Period effects
-  - Carryover effects
-  - Random noise
-- ✅ **Statistical Analysis**:
-  - ANOVA (Analysis of Variance)
-  - Paired t-tests for treatment comparisons
-  - Summary statistics by treatment
-- ✅ **Visualization**:
-  - Design heatmaps
-  - Box plots by treatment
-  - Individual subject trajectories
-  - Period effect analysis
-- ✅ **Report Generation**: Comprehensive text reports with all analysis results
-- ✅ **Data Export**: CSV export for further analysis in other tools
-
-## 🚀 Installation
-
-### Prerequisites
-
-```bash
-Python 3.7 or higher
+    ├── data_sources.md
+    └── comalls_methods.md        ← Ready to paste into a research paper
 ```
 
-### Required Packages
+---
+
+# 🔧 Installation
+
+### Requirements
+
+```bash
+Python 3.7+
+```
+
+### Install dependencies
 
 ```bash
 pip install numpy pandas matplotlib seaborn scipy
 ```
 
-Or use the provided requirements file:
+### Install COMALLS locally
 
 ```bash
-pip install -r requirements.txt
+pip install -e .
 ```
 
-## 💻 Usage
+---
 
-### Basic Usage
+# 📚 Usage Examples
+
+## 1️⃣ COMALLS ML Experiment (PyTorch Demo)
+
+```python
+from comalls import LatinSquareScheduler
+import torch, torch.nn as nn
+
+class TinyNet(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.fc = nn.Linear(10, 2)
+
+scheduler = LatinSquareScheduler(
+    models=["A","B","C"],
+    context1=["domain1","domain2","domain3"],
+    context2=["noise_low","noise_mid","noise_high"]
+)
+
+for ep in scheduler:
+    model = TinyNet()
+    # load data based on ep.context1 and ep.context2
+    # train() model...
+    # eval() model...
+```
+
+---
+
+## 2️⃣ Clinical Trial Simulation
 
 ```python
 from latin_square_analyzer import LatinSquareDesign
 
-# Define treatments
-treatments = ['Placebo', 'Drug_A', 'Drug_B', 'Drug_C']
-
-# Create design
-trial = LatinSquareDesign(treatments)
-
-# Generate Latin Square
-design = trial.generate_design(randomize=True)
-print(design)
-
-# Simulate trial data
-treatment_effects = {
-    'Placebo': 0,
-    'Drug_A': 15,
-    'Drug_B': 25,
-    'Drug_C': 10
-}
-
-data = trial.simulate_trial_data(treatment_effects)
-
-# Analyze results
-results = trial.analyze_results()
-print(results['treatment_summary'])
-
-# Generate visualizations
-trial.visualize_design(save_path='design.png')
-trial.visualize_results(save_path='results.png')
-
-# Generate report
-trial.generate_report('trial_report.txt')
+trial = LatinSquareDesign(['Placebo','DrugA','DrugB','DrugC'])
+design = trial.generate_design()
+data = trial.simulate_trial_data({'Placebo':0,'DrugA':20,'DrugB':18,'DrugC':10})
+trial.generate_report("trial_report.txt")
 ```
-
-### Running the Demo
-
-```bash
-python latin_square_analyzer.py
-```
-
-This will:
-1. Generate a randomized Latin Square design
-2. Simulate clinical trial data
-3. Perform statistical analysis
-4. Create visualizations
-5. Export all results to files
-
-
-## 🏥 Example Use Cases
-
-### 1. Pain Medication Comparison
-
-```python
-treatments = ['Placebo', 'Ibuprofen', 'Acetaminophen', 'Aspirin']
-treatment_effects = {
-    'Placebo': 0,
-    'Ibuprofen': 20,
-    'Acetaminophen': 15,
-    'Aspirin': 18
-}
-```
-
-### 2. Blood Pressure Monitor Evaluation
-
-```python
-treatments = ['Monitor_A', 'Monitor_B', 'Monitor_C', 'Gold_Standard']
-# Test across different times and locations
-```
-
-### 3. Dietary Intervention Study
-
-```python
-treatments = ['Control_Diet', 'Mediterranean', 'DASH', 'Keto']
-# Measure effects on cholesterol, blood sugar, weight
-```
-
-### 4. Asthma Inhaler Comparison
-
-```python
-treatments = ['Inhaler_A', 'Inhaler_B', 'Inhaler_C', 'Inhaler_D']
-# Measure peak flow rates, symptom scores
-```
-
-## 📊 Output Files
-
-The analyzer generates several output files:
-
-1. **latin_square_design.csv**: The experimental design matrix
-2. **trial_data.csv**: Complete trial dataset with all measurements
-3. **trial_report.txt**: Comprehensive statistical analysis report
-4. **design_heatmap.png**: Visual representation of the design
-5. **results_analysis.png**: Multi-panel visualization of results
-
-## 📈 Statistical Methods
-
-### ANOVA (Analysis of Variance)
-Tests whether there are significant differences among treatment means:
-- **H₀**: All treatments have equal effects
-- **H₁**: At least one treatment differs
-
-### Paired t-tests
-Compares each pair of treatments:
-- Uses paired design (same subjects across treatments)
-- Accounts for within-subject correlation
-
-### Effect Size Measures
-- Mean differences between treatments
-- Standard deviations and confidence intervals
-
-## 🔧 Advanced Configuration
-
-### Custom Parameters
-
-```python
-trial.simulate_trial_data(
-    treatment_effects=effects,
-    baseline_mean=50,          # Average baseline response
-    baseline_std=10,           # Variability between subjects
-    period_effect=2,           # Time trend per period
-    noise_std=5,               # Measurement error
-    carryover_effect=0.1       # Proportion of previous effect
-)
-```
-
-### Sample Size Considerations
-
-```python
-# For larger studies, extend the design
-trial = LatinSquareDesign(treatments, n_subjects=12)
-```
-
-## 🎓 Educational Resources
-
-### Key Concepts
-
-1. **Crossover Design**: Each subject receives multiple treatments
-2. **Blocking**: Controlling for known sources of variation
-3. **Counterbalancing**: Distributing order effects evenly
-4. **Washout Period**: Time between treatments to eliminate carryover
-
-### When to Use Latin Squares
-
-✅ **Good for:**
-- Chronic conditions with stable symptoms
-- Treatments with reversible effects
-- Limited number of available subjects
-- Need to control for individual variation
-
-❌ **Avoid when:**
-- Treatment has permanent effects (e.g., surgery)
-- Long-lasting side effects
-- Rapidly progressive disease
-- High dropout risk
-
-## 📚 References
-
-1. Jones, B., & Kenward, M. G. (2014). *Design and Analysis of Cross-Over Trials* (3rd ed.). Chapman and Hall/CRC.
-
-2. Senn, S. (2002). *Cross-over Trials in Clinical Research* (2nd ed.). John Wiley & Sons.
-
-3. Fleiss, J. L. (1986). *The Design and Analysis of Clinical Experiments*. John Wiley & Sons.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes:
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👥 Authors
-
-- **Md Tariqul Islam** - *Initial work* -
-
-## 🙏 Acknowledgments
-
-- Inspired by classical experimental design principles
-- Built for health science researchers and biostatisticians
-- Designed to promote reproducible research practices
-
-## 📧 Contact
-
-- GitHub: https://github.com/mtariqi
-- Email: tariqul@scired.com
-- Project Link: https://github.com/mtariqi/latin-square-clinical-trial
-- 
 
 ---
 
-**⭐ If you find this project useful, please consider giving it a star!**
+# 🧩 Diagrams
+
+## COMALLS Workflow
+
+```mermaid
+flowchart TD
+    A[Define Models] --> C[Latin Square Scheduler]
+    B[Define Context Factors] --> C
+    C --> D[Generate Episodes]
+    D --> E[Run ML Training/Eval]
+    E --> F[Statistical Aggregation (ANOVA / Mixed Models)]
+    F --> G[Meta-Learning Updates]
+```
+
+---
+
+# 📈 Statistical Methods
+
+Both the clinical-trial and COMALLS frameworks support:
+
+* **ANOVA**
+* **Paired t-tests**
+* **Effect size estimation**
+* **Mixed-effects modeling (optional)**
+* **Confidence intervals**
+* **Balanced evidence under controlled conditions**
+
+---
+
+# 🤝 Contributing
+
+Pull requests are welcome!
+
+---
+
+# 📝 License
+
+Licensed under the MIT License (see LICENSE file).
+
+---
+
+# 👥 Author
+
+**Md Tariqul Islam**
+GitHub: [https://github.com/mtariqi](https://github.com/mtariqi)
+Email: [tariqul@scired.com](mailto:tariqul@scired.com)
+
+---
+
+# ⭐ If you find this unified framework helpful, please give the repo a star!
+
+---
 
 
-
-
-
-
-
-
+Just tell me!
