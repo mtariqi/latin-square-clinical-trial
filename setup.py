@@ -65,3 +65,33 @@ setup(
     extras_require={
         "dev": [
             "pytest>=6.0",
+            "pytest-cov>=2.0",
+            "black>=21.0",
+            "flake8>=3.9",
+            "pylint>=2.8",
+            "sphinx>=6.0",
+            "sphinx-autodoc-typehints>=1.23.0",
+            "jupyter>=1.0",
+            "notebook>=6.4",
+            "streamlit>=1.25",
+        ],
+    },
+
+    keywords=[
+        "comalls",
+        "latin-square",
+        "clinical-trials",
+        "crossover-design",
+        "experimental-design",
+        "machine-learning",
+        "robustness",
+        "context-aware-training",
+        "biostatistics",
+        "anova",
+        "health-science",
+        "statistical-learning",
+    ],
+
+    include_package_data=True,
+    zip_safe=False,
+)
