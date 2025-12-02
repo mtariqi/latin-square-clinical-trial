@@ -1,4 +1,4 @@
-**Unified Framework for Clinical-Trial Simulation and Context-Controlled Machine Learning**
+# Unified Framework for Clinical-Trial Simulation and Context-Controlled Machine Learning
 Author: **Md Tariqul Islam (TARIQ)**
 
 ![Python](https://img.shields.io/badge/python-3.7+-blue.svg)
@@ -28,17 +28,6 @@ Both systems rely on the same statistical foundation and are now integrated into
 
 ---
 
-# 🎯 Why This Repository Is Unique
-
-This project goes beyond classical experimental design. It demonstrates:
-
-* ✔ **Latin squares in medical research** (crossover trials)
-* ✔ **Latin squares in machine learning** (context-balanced training)
-* ✔ Unified statistical rigor across two disciplines
-* ✔ Reproducible design-based experimentation
-* ✔ Model-agnostic APIs for ML, simulation, and statistical analysis
-
----
 
 # 📝 Table of Contents
 
