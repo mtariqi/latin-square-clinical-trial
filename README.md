@@ -1,5 +1,3 @@
-# COMALLS + Latin Square Clinical Trial Toolkit
-
 **Unified Framework for Clinical-Trial Simulation and Context-Controlled Machine Learning**
 Author: **Md Tariqul Islam (TARIQ)**
 
