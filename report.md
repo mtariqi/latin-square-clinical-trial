@@ -125,12 +125,9 @@ All runs automatically generate logs, metrics.json files, and visual output. Opt
 The framework optionally integrates PHI-safe pipelines, SHA-256 hashing for record tracking, and GCP/AWS KMS-based model encryption, following HIPAA-compliant patterns.
 
 Figure 1
-
 ```
 <img width="2000" height="1200" alt="image" src="https://github.com/user-attachments/assets/204282ba-597a-41e3-89d6-bc5a86ebff5f" />
-
 ```
-
 
 
 Figure 2
