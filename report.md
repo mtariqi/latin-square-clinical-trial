@@ -134,3 +134,7 @@ Figure 2
 ``
 <img width="2000" height="1200" alt="image" src="https://github.com/user-attachments/assets/0eaeb919-58bc-41aa-955a-cc8ebed05cb5" />
 ```
+Fig 3
+```
+<img width="2000" height="1200" alt="image" src="https://github.com/user-attachments/assets/a9c9f59b-8950-44a3-a379-2f4917bdcbb2" />
+```
