@@ -1,6 +1,7 @@
 # Unified Framework for Clinical-Trial Simulation and Context-Controlled Machine Learning
 Author: **Md Tariqul Islam (TARIQ)**
 
+![CI](https://github.com/mtariqi/synthetic-variant-calling-benchmark/actions/workflows/ci.yml/badge.svg)
 ![Python](https://img.shields.io/badge/python-3.7+-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Maintained](https://img.shields.io/badge/maintained-yes-brightgreen.svg)
